@@ -1,0 +1,36 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.rich_text_area :title %>
+  </div>
+
+  <div data-controller="direct-upload">
+    <%= form.label :file, style: "display: block" %>
+    <%= form.file_field :file, data: { direct_upload_target: 'input' } %>
+    <div class="progress-bar">
+      <div class="progress" data-direct-upload-target="progress" style="width: 0%;"></div>
+    </div>
+    <%= form.hidden_field :file_signed_id %> <!-- Hidden field to store the signed_id -->
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

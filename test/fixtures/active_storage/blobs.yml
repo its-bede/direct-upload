@@ -1,0 +1,5 @@
+---
+dummy_txt: <%= ActiveStorage::FixtureSet.blob(filename: 'dummy.txt') %>
+dummy_pdf: <%= ActiveStorage::FixtureSet.blob(filename: 'dummy.pdf') %>
+dummy_xml: <%= ActiveStorage::FixtureSet.blob(filename: 'dummy.xml') %>
+dummy_png: <%= ActiveStorage::FixtureSet.blob(filename: 'dummy.png') %>

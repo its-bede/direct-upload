@@ -1,0 +1,17 @@
+---
+dummy_txt:
+  name: file
+  record: dummy (Post)
+  blob: $LABEL
+dummy_pdf:
+  name: file
+  record: dummy (Post)
+  blob: $LABEL
+dummy_xml:
+  name: file
+  record: dummy (Post)
+  blob: $LABEL
+dummy_png:
+  name: file
+  record: dummy (Post)
+  blob: $LABEL
